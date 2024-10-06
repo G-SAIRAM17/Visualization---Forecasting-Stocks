@@ -1,0 +1,84 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Signup Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <section class="ftco-section pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Stock Forecasting</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-10">
+                    <div class="wrap d-md-flex">
+                        <div class="img" style="background-image: url('{% static 'images/signup.jpeg' %}');">
+                        </div>
+                        <div class="signin-wrap p-4 p-md-5" style="min-width:50%">
+                            <div class="d-flex">
+                                <div class="w-100">
+                                    <h3 class="mb-4">Sign Up</h3>
+                                </div>
+                            </div>
+                            <form action="#" class="signin-form" method="post" id="signupForm">
+                                {% csrf_token %}
+                                <div class="form-group mb-3">
+                                    <label class="label" for="name">Username</label>
+                                    <input type="text" class="form-control" placeholder="Username" name="name" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="email">Email</label>
+                                    <input type="email" class="form-control" placeholder="Email" name="email" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="phone">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="Phone Number" name="number"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="password">Password</label>
+                                    <input type="password" class="form-control" placeholder="Password" name="password"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="confirmPassword">Confirm Password</label>
+                                    <input type="password" class="form-control" placeholder="Confirm_Password"
+                                        name="confirm_password" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3"
+                                        onclick="return validateForm()" name="signup">Sign Up</button>
+                                </div>
+                            </form>
+                            <p class="text-center">Already a member? <a href="{% url 'signin' %}">Sign In</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/script1.js' %}"></script>
+
+</body>
+
+</html>
